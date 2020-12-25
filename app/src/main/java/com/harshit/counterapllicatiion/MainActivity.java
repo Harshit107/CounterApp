@@ -15,12 +15,16 @@ public class MainActivity extends AppCompatActivity {
 
     int count = 0;
     TextView text;
+    public static final String TAG ="MainActivity";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG,"At create State");
+
 
         text = findViewById(R.id.text);
         //
@@ -32,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
         inc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //method
-//                Snackbar.make(view, "Inc", 5000).show();
-                count = count+1;
-//                Log.d("MainActivity","Running");
+
+                count = count+1;    //1 = 2   1 -> 2
                 changeText();
 
             }
@@ -43,42 +45,99 @@ public class MainActivity extends AppCompatActivity {
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //method
-//                Snackbar.make(view, "DEC", 5000).show();
-                count -= -1;
-
+                count -= 1;
+                changeText();
             }
         });
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //method
-//                Snackbar.make(view, "RESET", 5000).show();
                 count = 0;
-
+                changeText();
             }
         });
     }
 
     void changeText() {
-        text.setText(count+"");
+        text.setText( String.valueOf(count) ); //2 -> String  ->  set Text
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"At Resume State");
 
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG,"At pause State");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG,"At stop State "+count);
+        //new layout with dark gray color
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        count = 0;
+        changeText();
+        Log.d(TAG,"At stop State"+count);
+        //remove that lay
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG,"At restart State");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"At OnDes. State");
+
+    }
 }
 
-//activity
-//context
 
-//        s1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// s1.setOnClickListener(new View.OnClickListener() {
+//@Override
+//public void onClick(View v) {
+//        //method
 ////                Snackbar.make(v,"This is snakebar",10000).show();
 //
-//                //Toast
-//                Toast.makeText(getApplicationContext(),"This is a Toast message!",Toast.LENGTH_LONG).show();
-//            }
+//        //Toast
+//        Toast.makeText(getApplicationContext(),"This is a Toast message!",Toast.LENGTH_LONG).show();
+//        }
 //        });
+
 
