@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         text = findViewById(R.id.text);
-        //
         Button inc = findViewById(R.id.inc);
         Button dec = findViewById(R.id.dec);
         Button reset = findViewById(R.id.reset);
+
 
 
         inc.setOnClickListener(new View.OnClickListener() {
