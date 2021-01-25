@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CounterApllicatiion">
-        <activity android:name=".Calculator">
+        <activity android:name=".ActivitySecond"/>
+        <activity android:name=".ActiviityFirst" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginPage"
-            android:screenOrientation="portrait">
+        <activity android:name=".SplashScreen">
 
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Calculator" />
+        <activity
+            android:name=".LoginPage"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

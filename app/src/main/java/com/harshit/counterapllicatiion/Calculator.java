@@ -2,6 +2,7 @@ package com.harshit.counterapllicatiion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,18 +42,23 @@ public class Calculator extends AppCompatActivity {
 //            }
 //        });
 
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent i = new Intent(Calculator.this,LoginPage.class);
+                startActivity(i);
+                finish();
 
-
-
-
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(checkUserInput()) {
-                    int f = Integer.parseInt(first.getText().toString());
-                    int s = Integer.parseInt(second.getText().toString());
+                    int f = change(first);
+                    int s = change(second);
                     int sum = f +s;
                     changeText(sum);
                 }
@@ -85,7 +91,7 @@ public class Calculator extends AppCompatActivity {
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkUserInput()) {
+                if(checkUserInput() ) {
                     int f = Integer.parseInt(first.getText().toString());
                     int s = Integer.parseInt(second.getText().toString());      //5/2 = 2
                     double sum = (double) f / s;
@@ -94,23 +100,20 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
-
-
-
     }
+
+
     boolean checkUserInput() {
         if(first.getText().toString().isEmpty()){
             first.setError("Field Required");
             return false;
         }
-        if(second.getText().toString().isEmpty()){
+        if(second.getText().toString().isEmpty() && change(second) == 0){
             second.setError("Field Required");
             return false;
         }
-
         return true;
     }
-
 
 
     void changeText(int sum) {
@@ -130,6 +133,9 @@ public class Calculator extends AppCompatActivity {
         second = findViewById(R.id.second);
         result = findViewById(R.id.result);
 
+    }
+    private int change(EditText et){
+        return Integer.parseInt(et.getText().toString());
     }
 
 

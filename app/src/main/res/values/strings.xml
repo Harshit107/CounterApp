@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CounterApllicatiion</string>
+    <string name="splashscreen">This is a simple splash screen</string>
+    <string name="message">Enter a message</string>
 </resources>
