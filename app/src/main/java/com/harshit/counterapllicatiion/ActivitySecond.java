@@ -30,7 +30,7 @@ public class ActivitySecond extends AppCompatActivity {
         tv.setText(message);
         send = findViewById(R.id.send);
 
-//
+
 //        class One;
 //        somemethod();
 //
@@ -40,38 +40,39 @@ public class ActivitySecond extends AppCompatActivity {
 
 
         //with object
-//
-//        AlertDialog.Builder alert = new AlertDialog.Builder(ActivitySecond.this);
-//        alert.setMessage(message);
-//        alert.setNegativeButton("Delete for Everyone", new DialogInterface.OnClickListener() {
-//            //method
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                //work
-//            }
-//        });
-//        alert.setNeutralButton("Delete for me", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//
-//            }
-//        });
-//        alert.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                //function
-//            }
-//        });
-//        alert.setIcon(R.drawable.email_24);
-//        alert.setTitle(message);
-//
-//        send.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                alert.create().show();
-//            }
-//        });
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(ActivitySecond.this);
+        alert.setMessage(message);
+        alert.setNegativeButton("Delete for Everyone", new DialogInterface.OnClickListener() {
+            //method
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //work
+            }
+        });
+        alert.setNeutralButton("Delete for me", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+
+            }
+        });
+        alert.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //function
+                Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_LONG).show();
+            }
+        });
+        alert.setIcon(R.drawable.email_24);
+        alert.setTitle(message);
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alert.create().show();
+            }
+        });
 
 
 //        without object
